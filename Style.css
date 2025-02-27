@@ -1,0 +1,368 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: url(/img/pelea.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+/* capa de oscurecimiento */
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.logo{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li{
+    margin: 0 15px;
+}
+
+.nav-links a{
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: black;
+    background-color: rgb(235, 57, 57);
+    border-radius: 5px;
+}
+
+.menu-hamburguesa{
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+/* Hero */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+}
+
+/* contenedor del texto con fondo translucido */
+.hero-content{
+    background: rgba(0, 0, 0,0.6);
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1{
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* carrusel de fotos */
+#carrusel-productos{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+.carrusel{
+    display: flex;
+    gap: 20px;
+    animation: deslizar 10s linear infinite;
+}
+
+.carrusel img{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@keyframes deslizar {
+    from{
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#productos{
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#productos h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.productos-container{
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.card{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px 10px;
+}
+
+.card h3{
+    font-size: 1.8rem;
+    margin: 10px 10px;
+}
+
+.card p{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Productos */
+.productos-container{
+    display: flex;
+    gap: 20px;
+}
+
+.card{
+    background: #222;
+    padding: 15px;
+    text-align: center;
+} 
+
+/* Contacto */
+
+#contacto{
+text-align: center;
+}
+
+#contacto h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+input, textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+/* Responsive */
+
+.menu-hamburguesa{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+@media (max-width: 768px){
+.nav-links{
+    display: block;
+}
+
+.nav-links{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+}
+
+.nav-links li{
+    display: block;
+    padding: 10px;
+}
+
+.nav-links.show{
+    display: flex;
+}
+
+.menu-hamburguesa{
+    display: block;
+}
+
+.menu-hamburguesa:hover + .nav-links{
+    display: flex;
+}
+}
+
+/* login y Registro */
+.formulario{
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.formulario input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.formulario button{
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: darkred;
+}
+
+.volver{
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+}
